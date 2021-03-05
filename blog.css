@@ -1,0 +1,784 @@
+/*
+ * Globals
+ */
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #555;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: normal;
+  color: #8b3131;
+}
+
+.first-word {
+  color: #cf5353;
+}
+
+/*
+ * Override Bootstrap's default container.
+ */
+
+@media (min-width: 1200px) {
+  .blog-container {
+    width:1170px;
+    margin-left: 150px;
+  }
+}
+
+
+/*
+ * Masthead for nav
+ */
+
+.blog-masthead {
+  background-color: #428bca;
+  -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+          box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+}
+
+/* Nav links */
+.blog-nav-item {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  font-weight: 500;
+  color: black;
+}
+.blog-nav-item:hover {
+  color: #cf5353!important; /*add a fade in*/
+}
+.blog-nav-item:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/* Active state gets a caret at the bottom */
+.blog-nav .active {
+  color: #cf5353;
+}
+.blog-nav .active:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -5px;
+  vertical-align: middle;
+  content: " ";
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid;
+  border-left: 5px solid transparent;
+}
+.blog-nav {
+    margin-left: -20px;
+}
+
+
+/*
+ * Blog name and description
+ */
+
+.blog-header {
+  text-align: center;
+}
+.blog-title {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-weight: normal;
+  font-family: 'Yeseva One', cursive;
+  font-size: 50px;
+  float: left;
+}
+.blog-description {
+  font-size: 20px;
+  color: #fca86a;
+  float: left;
+  margin-top: 57px;
+  margin-left: 20px;
+}
+#blogname {
+  position: absolute;
+  z-index: 66;
+  width: 100%;
+}
+#backgroundheader {
+  position: absolute;
+  width: 900px;
+  height: 200px;
+  margin-left: 150px;
+  z-index: 65;
+}
+
+/*
+* navbar
+*/
+#navbar {
+  width: 100%;
+  position: absolute;
+  z-index: 68;
+  margin-top: 100px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #feebc6;;
+  width: 210px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content a:hover {background-color: #fca86a;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdownbtn {background-color: #3e8e41;}
+
+/*
+* carousel code
+*/
+#fullcarousel, .carousel, .carousel-item, .carousel-inner {
+  height: 480px;
+  width: 1000px;
+  margin: auto;
+}
+#fullcarousel {
+  padding-top: 200px;
+  height: 700px!important;
+}
+
+/*
+* section titles
+*/
+.section-title {
+  font-size: 40px;
+  font-family: 'Yeseva One', cursive;
+  color: #8b3131;
+  margin-bottom: 25px;
+}
+.section-line {
+  width: 250px;
+  height: 1.5px;
+  background-color: black;
+  float: left;
+  margin-top: 29px;
+  margin-right: 15px;
+}
+
+/*
+ * Main column
+ */
+
+.blog-main {
+  font-size: 18px;
+  line-height: 1.5;
+  padding: 0px;
+  width: 100%;
+  margin-top: 75px;
+}
+.websiteframe {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+.top, .bottom, .left, .right {
+  position: fixed;
+  background-color: #feebc6;
+  z-index: 999;
+}
+.top, .bottom {
+  width: 100%;
+  height: 15px;
+}
+.bottom {
+  bottom: 0;
+}
+.right, .left {
+  height: 100%;
+  width: 15px;
+}
+.right {
+  right: 0;
+}
+
+/*
+* latest post section
+*/
+.lastest-posts {
+  height: 835px;
+  margin-top: 50px;
+  width: 1170px;
+}
+.latest-main-section {
+  height: 630px;
+  position: relative;
+  width: 1170px;
+}
+#large-caption {
+  position: absolute;
+  bottom: 75px;
+  z-index: 71;
+  color: white;
+  width: 575px;
+  position: absolute;
+  text-align: right;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+#text-large-latest {
+  font-size: 25px;
+  font-family: 'Yeseva One', cursive;
+}
+#small-latest-caption {
+  position: absolute;
+  bottom: 10px;
+  width: 275px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: right;
+  color: white;
+  z-index: 998;
+}
+#text-small-latest {
+  font-family: 'Yeseva One', cursive;
+}
+.newestbigpost {
+  width: 575px;
+  height: 575px;
+  position: relative;
+  float: left;
+  overflow: hidden;
+}
+.newestpost {
+  height: 275px;
+  width: 275px;
+}
+.newestpost:hover + .smaller-post-hover, .newestbigpost:hover + .big-post-hover {
+  transition: opacity .2s linear;
+}
+.newestpost:hover + .smaller-post-hover, .smaller-post-hover:hover, .newestbigpost:hover + .big-post-hover, .big-post-hover:hover {
+  position: absolute;
+  height: 275px;
+  width: 275px;
+  background-color: black;
+  z-index: 70;
+  opacity: 50%;
+  display: block;
+}
+.newestbigpost:hover + .big-post-hover, .big-post-hover:hover {
+  height: 575px;
+  width: 575px;
+}
+.newestpost:hover + .smaller-post-hover, .smaller-post-hover:hover {
+  height: 275px;
+  width: 275px;
+  top: 0;
+}
+.smaller-post-hover, .big-post-hover {
+  transition: opacity .5s linear;
+  opacity: 0;
+}
+
+.newestpostsmall, .newest {
+  height: 275px;
+  width: 275px;
+  position: relative;
+  overflow: hidden;
+}
+.first-newest-post {
+  left: 25px;
+}
+.second-newest-post {
+  left: 320px;
+  top: -275px;
+}
+.third-newest-post {
+  left: 25px;
+  top: -250px;
+}
+.fourth-newest-post {
+  left: 895px;
+  top: -525px;
+}
+
+#latest-sub {
+  width: 390px;
+  height: fit-contet;
+  float: left
+}
+.latest-sub-section {
+  width: 1170px;
+  height: fit-content;
+  margin-top: 25px;
+  overflow: auto;
+}
+.sub-image {
+    height: 175px;
+    width: 300px;
+    overflow: hidden;
+    margin: auto;
+}
+#top-sub-section, #bottom-sub-section {
+  width: 1170px;
+  height: fit-content;
+  overflow: auto;
+}
+#top-sub-section {
+  margin-bottom: 30px;
+}
+#sub-latest-caption {
+  width: 300px;
+  margin: auto;
+  margin-top: 15px;
+  z-index: 998;
+}
+#text-sub-latest {
+  font-family: 'Yeseva One', cursive;
+  margin-bottom: 5px;
+  font-size: 25px;
+  color: #8b3131;
+}
+#small-latest-author {
+  font-size: 15px;
+}
+#text-desc-latest {
+  margin-bottom: 5px;
+}
+#time {
+  color:#8b3131;
+}
+.button {
+  width: 300px;
+  height: 50px;
+  background-color: #8b3131;
+  margin: auto;
+  margin-top: 50px;
+  position: absolute;
+  margin-left: 435px;
+}
+.latest-button {
+  height: 150px;
+  position: relative;
+}
+.button h5 {
+  color: white;
+  text-align: center;
+  height: 18px;
+  margin-top: 15px;
+}
+
+/*
+* events and updates, also sidebar
+*/
+.events-and-updates {
+  height: 1080px;
+  position: relative;
+  margin-top: 50px;
+}
+.eau-main {
+  width: 65%;
+  overflow: hidden;
+  float: left;
+  position: relative;
+}
+.eau-sidebar {
+  width: 35%;
+  overflow: hidden;
+  float: left;
+  position: relative;
+  height: 600px;
+}
+.eau-one, .eau-two, .eau-three {
+  height: 300px;
+  margin-bottom: 30px;
+  padding-right: 30px;
+}
+.eau-two {
+}
+.eau-image {
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  float: left;
+}
+.captions {
+  height: 300px;
+  margin-left: 300px;
+  padding-left: 25px;
+  padding-top: 20px;
+}
+.left-captions {
+  width: 430px;
+  float: left;
+  padding-top: 20px;
+  padding-right: 25px;
+  text-align: right;
+}
+#time-type {
+  margin-bottom: 15px;
+}
+#event-title {
+  font-family: 'Yeseva One', cursive;
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+#register  {
+  border: 0;
+  padding: 10px;
+  width: 150px;
+  background-color: #8b3131;
+  color: white;
+}
+#subscription {
+  background-color: #8b3131;
+  color: white;
+  width: 350px;
+  margin-left: 20px;
+  padding: 15px;
+  z-index: 1;
+  height: 350px;
+  position: absolute;
+}
+#subscription h5 {
+  color: #feebc6;
+  text-align: center;
+  padding-top: 25px;
+  font-family: 'Yeseva One', cursive;
+}
+#subscription h4 {
+  color: white;
+  text-align: center;
+  font-family: 'Yeseva One', cursive;
+  padding-top: 10px;
+  font-size: 17px;
+}
+#subscription-shadow {
+  background-color: #fca86a;
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  z-index: 0;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+input[type=text] {
+  border-top: 0px;
+  background-color: transparent;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid black;
+  width: 300px;
+  margin-left: 10px;
+  padding-top: 20px;
+}
+::placeholder {
+  color: #fca86a;
+  outline: transparent;
+  opacity: 50%;
+}
+input[type=text]:focus {
+  color: #fca86a;
+  outline: transparent;
+}
+button.button.subscribe {
+    position: relative;
+    margin-left: 90px;
+    margin-top: 40px;
+    width: 140px;
+    padding: 0px;
+    border: 0px;
+    background-color: #feebc6;
+}
+#carrdbutton {
+  position: absolute;
+  margin-top: 400px;
+  width: 400px;
+  height: fit-content;
+  display: none;
+}
+
+/*
+* instagram section
+*/
+.instagram-updates {
+  position: relative;
+  margin-top: 50px;
+}
+#carouselExampleControls {
+  height: 275px;
+  margin-bottom: 50px;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 1170px;
+}
+#instacontainer {
+    width: 900px;
+    height: fit-content;
+    margin: auto;
+    overflow: auto;
+}
+.innerinsta {
+  height: 275px;
+  margin:0px;
+  width: 1170px;
+}
+.instapost {
+  height: 290px;
+      width: 290px;
+      overflow: hidden;
+      margin-right: 15px;
+      margin-top: 15px;
+      float: left;
+}
+.instaimage {
+  height: 275px;
+  float: left;
+}
+.instashadow {
+  height: 275px;
+  width: 275px;
+}
+
+.instashadowone {
+  background-color: #fca86a;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.two {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.instashadowtwo {
+  background-color: #8b3131;
+}
+
+.instaimagecontain {
+  width: 275px;
+  height: 275px;
+  position: absolute;
+  overflow: hidden;
+}
+
+.endimage {
+  margin-right: 0px;
+}
+.insta-item.active {
+  margin-left: 0px;
+  width: 1170px;
+}
+.control {
+  display: none;
+}
+#hover-control:hover + .control {
+  display: block;
+}
+#hover-control:hover{
+  opacity: .5;
+}
+#hover-control {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0;
+}
+
+/*
+* second navigation
+*/
+.navigation-again {
+  margin-top: 50px;
+  height: 530px;
+  font-family: 'Yeseva One', cursive;
+  width: 50%;
+  float: left;
+}
+#background-nav {
+  background-color: #fca86a;
+  height: 500px;
+  width: 400px;
+  position: absolute;
+}
+#forefront-nav {
+  background-color: #8b3131;
+  height: 500px;
+  width: 400px;
+  margin-top: 15px;
+  margin-left: 15px;
+  position: absolute;
+}
+#upper-navagain {
+  font-size: 50px;
+  color: black;
+  z-index: 4;
+  margin-left: 275px;
+  position: relative;
+  margin-top: 25px;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+#upper-navagain:hover {
+  text-decoration: none;
+  padding-left: 25px;
+  transition-duration: 0.2s;
+}
+.lower-navagain {
+  font-size:40px;
+  color:black;
+  transition-duration: .2s;
+}
+.lower-navagain:hover {
+  text-decoration: none;
+  padding-left: 25px;
+  transition: .2s;
+  color: black;
+}
+#navagain-links {
+  position: absolute;
+  margin-left: 325px;
+  margin-top: 50px;
+}
+
+/*
+* popular
+*/
+.popular {
+  margin-top: 50px;
+  height: fit-content;
+  overflow: auto;
+}
+.poppost {
+  float: left;
+  width: 291.37500px;
+  text-align: right;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-left: 15px;
+}
+.popimage {
+  width: 300px;
+  height: 150px;
+}
+.firstpop {
+  margin-left: 0px;
+}
+.popstory, .popstory:hover {
+  text-decoration: none;
+  color: black;
+  width: 261.375px;
+  height: 90px;
+  overflow: hidden;
+}
+.verticalline {
+  height: 100px;
+  background-color: black;
+  width: 1.5px;
+  float: left;
+}
+.poptitle {
+  font-size: 21px;
+  font-family: 'Yeseva One', cursive;
+  height: 55.2px;
+  overflow: hidden;
+}
+
+.popauthor, .popdate {
+  font-size: 15px;
+}
+#partone-pop {
+  height: fit-content;
+  overflow: auto;
+}
+#popback {
+  z-index: -1;
+  height: 115%;
+  overflow: auto;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background-color: #feebc6;
+  margin-top: -30px;
+}
+
+#parttwo {
+  width: 50%;
+  float: left;
+  margin-top: 100px;
+  padding-left: 50px;
+}
+#popsmalltitle {
+  font-weight: bolder;
+  font-size: 13px;
+}
+#popopinons, #popstories, #popart {
+  height: fit-content;
+  overflow: auto;
+  margin-bottom: 20px;
+}
+#popoppost, #popstopost, #popartpost {
+    text-align: center;
+    width: 178px;
+    float: left;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+#popoptitle, #popstotitle, #poparttitle {
+  font-family: 'Yeseva One', cursive;
+  font-size: 20px;
+}
+#popopdate, #popopauthor, #popstodate, #popstoauthor, #popartdate, #popartauthor {
+    font-size: 13px;
+}
+#popline {
+  height: 1px;
+  width: 100%;
+  position: relative;
+  background-color: black;
+  margin-top: 119px;
+}
+
+/*
+* Footer
+*/
+#blog-footer {
+    height: 400px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    margin-top: 75px;
+    background-color: #feebc6;
+}
+#blogcontainer {
+  width: 1200px;
+  margin: auto;
+  margin-top: 50px;
+}
+#disclaimer {
+  padding-right: 20px;
+}
+#disclaimer, #socialmedialinks {
+  width: 50%;
+  float: left;
+}
+#name {
+  font-family: 'Yeseva One', cursive;
+  font-size: 60px;
+}
+#description {
+  font-size: 18px;
+}
